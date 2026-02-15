@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Claim",
+  "type": "object",
+  "required": ["id", "invention_id", "text", "claim_type"],
+  "properties": {
+    "id": {"type": "string"},
+    "invention_id": {"type": "string"},
+    "text": {"type": "string"},
+    "claim_type": {
+      "type": "string",
+      "enum": ["independent", "dependent"]
+    },
+    "status": {
+      "type": "string",
+      "enum": ["draft", "final"]
+    },
+    "depends_on": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  }
+}
